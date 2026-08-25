@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "node --loader ts-node/esm src/main.ts",
+    "prebuild": "prisma generate",
     "build": "tsc -p tsconfig.json",
     "start": "node dist/main.js",
     "lint": "eslint . --ext .js,.mjs,.cjs --ignore-pattern dist --ignore-pattern node_modules",
