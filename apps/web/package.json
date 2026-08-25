@@ -1,0 +1,38 @@
+{
+  "name": "@lead/web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --hostname 0.0.0.0 --port 3000",
+    "build": "next build --webpack",
+    "start": "next start --hostname 0.0.0.0 --port 3000",
+    "lint": "eslint . --ext .js,.mjs,.cjs --ignore-pattern .next --ignore-pattern node_modules",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@lead/config": "*",
+    "@lead/types": "*",
+    "@lead/ui": "*",
+    "@tanstack/react-query": "^5.60.1",
+    "axios": "^1.7.2",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.468.0",
+    "next": "^16.0.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwind-merge": "^2.4.6"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.0.0",
+    "@types/react": "^19.1.0",
+    "eslint": "^8.57.0",
+    "@types/react-dom": "^19.1.0",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "^16.0.0",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.16",
+    "typescript": "^5.8.3"
+  }
+}

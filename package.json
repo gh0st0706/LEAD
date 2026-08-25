@@ -1,0 +1,19 @@
+{
+  "name": "lead-monorepo",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n web,api -c blue,green \"npm run dev --workspace @lead/web\" \"npm run dev --workspace @lead/api\"",
+    "build": "npm run build --workspace @lead/web && npm run build --workspace @lead/api",
+    "lint": "npm run lint --workspace @lead/web && npm run lint --workspace @lead/api",
+    "typecheck": "npm run typecheck --workspace @lead/web && npm run typecheck --workspace @lead/api",
+    "db:generate": "npm run db:generate --workspace @lead/api",
+    "docker:up": "docker compose up --build"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}
