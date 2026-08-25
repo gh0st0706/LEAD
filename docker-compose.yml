@@ -10,6 +10,11 @@ services:
       - '5432:5432'
     volumes:
       - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U postgres -d lead']
+      interval: 5s
+      timeout: 5s
+      retries: 10
   api:
     build:
       context: .
@@ -18,7 +23,8 @@ services:
       DATABASE_URL: postgresql://postgres:postgres@db:5432/lead?schema=public
       PORT: 3001
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     ports:
       - '3001:3001'
   web:
