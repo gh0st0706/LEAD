@@ -10,4 +10,4 @@ RUN npm install
 RUN npm run db:generate --workspace @lead/api
 COPY apps/api/src ./apps/api/src
 EXPOSE 3001
-CMD ["npm", "run", "dev", "--workspace", "@lead/api"]
+CMD ["sh", "-c", "npx prisma db push --schema apps/api/prisma/schema.prisma && npm run dev --workspace @lead/api"]
