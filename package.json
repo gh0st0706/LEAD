@@ -6,6 +6,7 @@
     "packages/*"
   ],
   "scripts": {
+    "postinstall": "npm run db:generate",
     "dev": "concurrently -n web,api -c blue,green \"npm run dev --workspace @lead/web\" \"npm run dev --workspace @lead/api\"",
     "build": "npm run build --workspace @lead/web && npm run build --workspace @lead/api",
     "lint": "npm run lint --workspace @lead/web && npm run lint --workspace @lead/api",
